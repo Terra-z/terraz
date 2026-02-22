@@ -274,6 +274,27 @@
             color: var(--text-muted);
         }
 
+        
+        /* Footer Services 2-Column Layout */
+        .footer-services .services-columns {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0 2rem;
+        }
+
+        .footer-services .services-col a {
+            display: block;
+            color: var(--text-secondary);
+            text-decoration: none;
+            margin-bottom: 0.75rem;
+            transition: color 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .footer-services .services-col a:hover {
+            color: var(--primary);
+        }
+
         @media (max-width: 1024px) {
             .nav-links { display: none; }
             .footer-content { grid-template-columns: 1fr 1fr; }
@@ -336,13 +357,36 @@
                 <h3>Terra-Z</h3>
                 <p>Ihr Experte für Terrassenüberdachungen, Wintergärten und Carports in NRW.</p>
             </div>
-            <div class="footer-section">
+                        <div class="footer-section footer-services">
                 <h4>Leistungen</h4>
-                <a href="terrassenueberdachung.html">Terrassenüberdachung</a>
-                <a href="wintergarten.html">Wintergarten</a>
-                <a href="carport.html">Carport</a>
-                <a href="galerie.html">Galerie</a>
+                <div class="services-columns">
+                    <div class="services-col">
+                        <a href="terrassenueberdachung.html">Terrassenüberdachung</a>
+                        <a href="wintergarten.html">Wintergarten</a>
+                        <a href="carport.html">Carport</a>
+                        <a href="beschattungen.html">Beschattungen</a>
+                        <a href="terrassenueberdachung.html">Überdachungen</a>
+                        <a href="terrassenueberdachung.html">Vordach Haustür</a>
+                        <a href="wintergarten.html">Schiebetür</a>
+                        <a href="beschattungen.html">Plissee</a>
+                        <a href="terrassenueberdachung.html">Veranda</a>
+                        <a href="terrassenueberdachung.html">Terrassen</a>
+                    </div>
+                    <div class="services-col">
+                        <a href="terrassenueberdachung.html">Polycarbonat</a>
+                        <a href="galerie.html">Sandwich Panele</a>
+                        <a href="galerie.html">Fliegengitter</a>
+                        <a href="galerie.html">Elektromarkise</a>
+                        <a href="galerie.html">Unterdach Markise</a>
+                        <a href="beschattungen.html">Sonnenschutz</a>
+                        <a href="beschattungen.html">Sichtschutz</a>
+                        <a href="galerie.html">Fassaden Verkleidungen</a>
+                        <a href="galerie.html">Guillotine-Glassysteme</a>
+                        <a href="galerie.html">Galerie</a>
+                    </div>
+                </div>
             </div>
+
             <div class="footer-section">
                 <h4>Standorte</h4>
                 <a href="index.html#standorte">Gelsenkirchen</a>
@@ -353,7 +397,8 @@
             <div class="footer-section">
                 <h4>Kontakt</h4>
                 <a href="tel:+491638641737">📞 0163 8641737</a>
-                <a href="mailto:info@terra-z.de">📧 info@terra-z.de</a>
+                <a href="mailto:info@terra-z.de">📧 info@terra-z.de</a></span></a>
+                <p style="margin-top:1rem;color:var(--text-secondary);font-size:0.9rem">Almastr. 52, 45886 Gelsenkirchen</p>
             </div>
         </div>
         <div class="footer-bottom">
@@ -361,7 +406,7 @@
         </div>
     </footer>
 
-    <script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         const galleryImages = [
             { src: 'images/logo.PNG', caption: '' },
             { src: 'images/Terrassenüberdachung-19.webp', caption: 'Terrassenüberdachung' },
@@ -513,13 +558,3 @@
             const diff = touchStartX - touchEndX;
 
             if (Math.abs(diff) > 60) { // swipe threshold
-                if (diff > 0) moveSlide(1);   // left → next
-                else          moveSlide(-1);  // right → prev
-            }
-        });
-
-        // Start the gallery
-        initGallery();
-    </script>
-</body>
-</html>
