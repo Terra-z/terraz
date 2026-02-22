@@ -357,7 +357,7 @@
                 <h3>Terra-Z</h3>
                 <p>Ihr Experte für Terrassenüberdachungen, Wintergärten und Carports in NRW.</p>
             </div>
-                        <div class="footer-section footer-services">
+            <div class="footer-section footer-services">
                 <h4>Leistungen</h4>
                 <div class="services-columns">
                     <div class="services-col">
@@ -405,8 +405,8 @@
             <p>© 2026 Terra-Z. Alle Rechte vorbehalten.</p>
         </div>
     </footer>
-
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+        
+    <script>
         const galleryImages = [
             { src: 'images/logo.PNG', caption: '' },
             { src: 'images/Terrassenüberdachung-19.webp', caption: 'Terrassenüberdachung' },
@@ -558,3 +558,13 @@
             const diff = touchStartX - touchEndX;
 
             if (Math.abs(diff) > 60) { // swipe threshold
+                if (diff > 0) moveSlide(1);   // left → next
+                else          moveSlide(-1);  // right → prev
+            }
+        });
+
+        // Start the gallery
+        initGallery();
+    </script>
+</body>
+</html>
