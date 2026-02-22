@@ -140,7 +140,7 @@
         }
 
         nav {
-            max-width: 1600px;
+            max-width: 1450px;
             margin: 0 auto;
             padding: 1.2rem 2rem;
             display: flex;
@@ -859,7 +859,7 @@
             transition: all 400ms;
             color: white;
             padding: 0.25rem .95rem;
-            border-radius: 30px;
+            border-radius: 25px;
             text-decoration: none;
             font-weight: 100;
             transition: all 0.3s ease;
@@ -955,7 +955,7 @@
             
             <a href="anfrage.html" class="cta-button">Jetzt Anfragen</a>
 
-            <a class="whatsapp-btn" href="https://wa.me/91999999999">
+            <a class="whatsapp-btn" href="https://wa.me/491638641737">
                 <img alt="WhatsApp" src="images/WhatsAppButtonGreenMedium.svg" />  
                 <span>WhatsApp</span>
             </a>
@@ -1310,7 +1310,7 @@
         </div>
     </footer>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+   <script>
         // City Detection & Dynamic Content
         const cityMap = {
             'Gelsenkirchen': { name: 'Gelsenkirchen', region: 'im Zentrum des Ruhrgebiets' },
@@ -1419,76 +1419,8 @@
             });
         });
 
- // Form submission - sends email to info@terra-z.de
-        document.getElementById('contactForm').addEventListener('submit', async function(e) {
-            e.preventDefault();
-            
-            const submitBtn = this.querySelector('.submit-btn');
-            const originalText = submitBtn.textContent;
-            
-            // Get form values
-            const name = this.querySelector('[name="name"]').value;
-            const email = this.querySelector('[name="email"]').value;
-            const phone = this.querySelector('[name="phone"]').value || 'Nicht angegeben';
-            const message = this.querySelector('[name="message"]').value;
-            const detectedCity = document.getElementById('user-city').textContent;
-            
-            // Show loading state
-            submitBtn.disabled = true;
-            submitBtn.textContent = '⏳ Wird gesendet...';
-            submitBtn.style.opacity = '0.6';
-            
-            // Prepare form data for Web3Forms
-            const formData = new FormData();
-            formData.append('access_key', '8mpKnCSiNQXK/d9M7IDrSzRkXjNcoSR4am6toXvgf5TO6xMpfT4TxTRndSDnOmf2sfMRaz5MAUXOw6lZuZAWrON/2FkPs4NwirBgV6k3yEdnyTMuPRNEId5dU5Rlup2HL4TWpgCHddWlQyzT0CwF69qGh7Cr6eMrNiEyY95lUCQy3HcTf+BbPSuRDS+igKuin4GEPBYvnON8yWCp38cqpP2HGz6vfqBkIOHQ9587S2M='); // ← Replace with your key from web3forms.com
-            formData.append('subject', `Neue Anfrage von ${name} aus ${detectedCity}`);
-            formData.append('from_name', name);
-            formData.append('email', email); // Sets reply-to address
-            formData.append('phone', phone);
-            formData.append('message', `
-═══════════════════════════════════
-Neue Anfrage von Terra-Z Website
-═══════════════════════════════════
 
-👤 Name: ${name}
-📧 E-Mail: ${email}
-📞 Telefon: ${phone}
-📍 Stadt: ${detectedCity}
-📅 Datum: ${new Date().toLocaleString('de-DE')}
-
-💬 Nachricht:
-──────────────────────────────────
-${message}
-
-═══════════════════════════════════
-Gesendet von: www.terra-z.de
-            `);
-            
-            try {
-                const response = await fetch('https://api.web3forms.com/submit', {
-                    method: 'POST',
-                    body: formData
-                });
-                
-                const result = await response.json();
-                
-                if (result.success) {
-                    // Success message in German
-                    alert('✅ Vielen Dank für Ihre Anfrage!\n\n' +
-                          'Wir haben Ihre Nachricht erhalten und melden uns schnellstmöglich bei Ihnen.\n\n' +
-                          '⏱️ In der Regel antworten wir innerhalb von 24 Stunden.\n\n' +
-                          '📞 Bei dringenden Fragen erreichen Sie uns unter: 0163 8641737');
-                    
-                    // Reset form
-                    this.reset();
-                    
-                    // Optional: Scroll to top
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                } else {
-                    throw new Error('Submission failed');
-                }
-            } catch (error) {
-                console.error('Form submission error:', error);
-                
-                // Error message in German
-                alert('❌ Verbindungsfehler\n
+ </script>
+         </body>
+         </html>
+         
