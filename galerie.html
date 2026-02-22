@@ -45,7 +45,7 @@
             border-bottom: 1px solid var(--border-subtle);
         }
         nav {
-            max-width: 1400px;
+            max-width: 1450px;
             margin: 0 auto;
             padding: 1.2rem 2rem;
             display: flex;
@@ -294,6 +294,45 @@
         .footer-services .services-col a:hover {
             color: var(--primary);
         }
+        
+        .whatsapp-btn {
+            transition: all 400ms;
+            color: white;
+            padding: 0.25rem .95rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 100;
+            transition: all 0.3s ease;
+            margin-right: 5px;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            box-shadow: 2px 10px 15px rgba(255, 107, 53, 0.3);
+        }
+
+        .whatsapp-btn:hover {
+            transform: scale(1.2);
+        }
+
+        .whatsapp-btn img {
+            width: 50px;     
+            display: block;   
+            }
+
+        .whatsapp-btn span {
+            top: 0;
+            font-family: "Roboto", sans-serif;
+            font-weight: bold;
+            color: white;
+            opacity: 1;
+            transition: all 400ms;
+        }
+
+        .whatsapp-btn:hover + span {
+            transform: rotateZ(0deg) translateX(0px);
+            opacity: 1;
+        }
+
 
         @media (max-width: 1024px) {
             .nav-links { display: none; }
@@ -326,6 +365,10 @@
                 <li><a href="index.html#standorte">Standorte</a></li>
             </ul>
             <a href="anfrage.html" class="cta-button">Jetzt Anfragen</a>
+            <a class="whatsapp-btn" href="https://wa.me/491638641737">
+                <img alt="WhatsApp" src="images/WhatsAppButtonGreenMedium.svg" />  
+                <span>WhatsApp</span>
+            </a>
         </nav>
     </header>
 
