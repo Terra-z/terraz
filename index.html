@@ -933,31 +933,33 @@
             height: 100%;
             width: 100%;
             opacity: 0;
-            animation: tz-showHideSlide 40s steps(1) infinite;
-		image
+           animation: tz-showHideSlide 55s steps(1) infinite;
         }
-        /* 8 slides × 5s each = 40s total */
-        .tz-untitled__slide:nth-child(1) { animation-delay: 0s;  }
-        .tz-untitled__slide:nth-child(2) { animation-delay: 5s;  }
-        .tz-untitled__slide:nth-child(3) { animation-delay: 10s; }
-        .tz-untitled__slide:nth-child(4) { animation-delay: 15s; }
-        .tz-untitled__slide:nth-child(5) { animation-delay: 20s; }
-        .tz-untitled__slide:nth-child(6) { animation-delay: 25s; }
-        .tz-untitled__slide:nth-child(7) { animation-delay: 30s; }
-        .tz-untitled__slide:nth-child(8) { animation-delay: 35s; }
+        /* 11 slides x 5s each = 55s total */
+        .tz-untitled__slide:nth-child(1)  { animation-delay: 0s;  }
+        .tz-untitled__slide:nth-child(2)  { animation-delay: 5s;  }
+        .tz-untitled__slide:nth-child(3)  { animation-delay: 10s; }
+        .tz-untitled__slide:nth-child(4)  { animation-delay: 15s; }
+        .tz-untitled__slide:nth-child(5)  { animation-delay: 20s; }
+        .tz-untitled__slide:nth-child(6)  { animation-delay: 25s; }
+        .tz-untitled__slide:nth-child(7)  { animation-delay: 30s; }
+        .tz-untitled__slide:nth-child(8)  { animation-delay: 35s; }
+        .tz-untitled__slide:nth-child(9)  { animation-delay: 40s; }
+        .tz-untitled__slide:nth-child(10) { animation-delay: 45s; }
+        .tz-untitled__slide:nth-child(11) { animation-delay: 50s; }
         @keyframes tz-showHideSlide {
             0%     { opacity: 1; pointer-events: auto;  z-index: 1;  }
-            12.5%  { opacity: 0; pointer-events: none;  z-index: -1; }
+            9.09%  { opacity: 0; pointer-events: none;  z-index: -1; }
             100%   { opacity: 0; pointer-events: none;  z-index: -1; }
         }
         .tz-untitled__slideBg {
-            position: relative;
+            position: absolute;
             height: 100%;
             width: 100%;
+            top: 0;
+            left: 0;
             background-size: cover;
             background-position: center;
-            z-index: -1;
-            animation: tz-bgInOut 10s -5s infinite;
         }
         @keyframes tz-bgInOut {
             0%   { transform: rotate(-45deg) scale(1.1); animation-timing-function: cubic-bezier(0.165,0.840,0.440,1.000); }
@@ -1131,6 +1133,19 @@
                         <div class="tz-untitled__slideBg" style="background-image:url('images/Buro-recption.jpeg');"></div>
 						 <div class="tz-slide-label">Büro Rezeption</div>
                     </div>
+					 <div class="tz-untitled__slide">
+                        <div class="tz-untitled__slideBg" style="background-image:url('images/terrassenüberdachung-6.jpeg');"></div>
+						 <div class="tz-slide-label">Terrassenüberdachung</div>
+                    </div>
+					 <div class="tz-untitled__slide">
+                        <div class="tz-untitled__slideBg" style="background-image:url('images/carport.png');"></div>
+						 <div class="tz-slide-label">Carport</div>
+                    </div>
+					 <div class="tz-untitled__slide">
+                        <div class="tz-untitled__slideBg" style="background-image:url('images/Terrassenüberdachung-17.webp');"></div>
+						 <div class="tz-slide-label">Terrasen</div>
+                    </div>
+					
                 </div>
                 <div class="tz-untitled__shutters"></div>
             </div>
