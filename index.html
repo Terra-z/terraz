@@ -6,7 +6,7 @@
     
     <!-- Enhanced SEO Title - Will be updated dynamically -->
     <title id="page-title">Terrassenüberdachung NRW ✓ Wintergarten & Carport | Terra-Z</title>
-    
+    <link rel="icon" href="logo.webp" type="image/x-icon">
     <!-- Enhanced SEO Meta Tags -->
     <meta name="description" id="page-description" content="⭐ Terrassenüberdachung & Wintergarten vom Experten in NRW ✓ Gelsenkirchen, Essen, Dortmund, Bochum & mehr ✓ 15 Jahre Erfahrung ✓ Kostenlose Beratung ✓ 0163 8641737">
     <meta name="keywords" content="terrassenüberdachung nrw, terrassenüberdachung gelsenkirchen, terrassenüberdachung essen, wintergarten nrw, carport nrw, beschattungen, terrassendach, überdachung terrasse, aluminium terrassenüberdachung, holz terrassenüberdachung, glasdach terrasse, lamellendach, pergola, markisen">
@@ -910,6 +910,131 @@
             }
         }
 
+        /* ── Shutter Slideshow ── */
+        .tz-untitled {
+            position: relative;
+            width: 100%;
+            max-width: 1100px;
+            height: 460px;
+            margin: 2rem auto 2.5rem;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 8px 40px rgba(0,0,0,0.7);
+        }
+        .tz-untitled__slides {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            top: 0;
+            left: 0;
+        }
+        .tz-untitled__slide {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            opacity: 0;
+            animation: tz-showHideSlide 40s steps(1) infinite;
+		image
+        }
+        /* 8 slides × 5s each = 40s total */
+        .tz-untitled__slide:nth-child(1) { animation-delay: 0s;  }
+        .tz-untitled__slide:nth-child(2) { animation-delay: 5s;  }
+        .tz-untitled__slide:nth-child(3) { animation-delay: 10s; }
+        .tz-untitled__slide:nth-child(4) { animation-delay: 15s; }
+        .tz-untitled__slide:nth-child(5) { animation-delay: 20s; }
+        .tz-untitled__slide:nth-child(6) { animation-delay: 25s; }
+        .tz-untitled__slide:nth-child(7) { animation-delay: 30s; }
+        .tz-untitled__slide:nth-child(8) { animation-delay: 35s; }
+        @keyframes tz-showHideSlide {
+            0%     { opacity: 1; pointer-events: auto;  z-index: 1;  }
+            12.5%  { opacity: 0; pointer-events: none;  z-index: -1; }
+            100%   { opacity: 0; pointer-events: none;  z-index: -1; }
+        }
+        .tz-untitled__slideBg {
+            position: relative;
+            height: 100%;
+            width: 100%;
+            background-size: cover;
+            background-position: center;
+            z-index: -1;
+            animation: tz-bgInOut 10s -5s infinite;
+        }
+        @keyframes tz-bgInOut {
+            0%   { transform: rotate(-45deg) scale(1.1); animation-timing-function: cubic-bezier(0.165,0.840,0.440,1.000); }
+            33%  { transform: rotate(0deg); }
+            50%  { transform: rotate(0deg); }
+            66%  { transform: rotate(0deg); animation-timing-function: cubic-bezier(0.895,0.030,0.685,0.220); }
+            100% { transform: rotate(45deg) scale(0.9); }
+        }
+		.tz-slide-label {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.55);
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    font-size: 2rem;
+    font-weight: 600;
+    padding: 7px 22px;
+    border-radius: 30px;
+    white-space: nowrap;
+    z-index: 5;
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 107, 53, 0.5);
+    letter-spacing: 0.05em;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.6);
+}
+        .tz-untitled__shutters {
+            position: absolute;
+            height: 150%;
+            width: 150%;
+            left: -25%;
+            top: -25%;
+            pointer-events: none;
+            z-index: 2;
+            animation: tz-rotateFrame 10s linear infinite;
+        }
+        @keyframes tz-rotateFrame {
+            0%   { transform: rotate(0deg); }
+            100% { transform: rotate(180deg); }
+        }
+        .tz-untitled__shutters::before,
+        .tz-untitled__shutters::after {
+            content: '';
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            left: 50%;
+            transform: translate3d(-50%, 0, 0);
+            background-color: hsl(15,75%,40%);
+            pointer-events: auto;
+        }
+        .tz-untitled__shutters::before {
+            bottom: 50%;
+            animation: tz-openTop 5s infinite;
+        }
+        @keyframes tz-openTop {
+            0%   { transform: translate3d(-50%, 0, 0);    animation-timing-function: cubic-bezier(0.8,0.00,0.1,1); }
+            40%  { transform: translate3d(-50%, -65%, 0); animation-timing-function: cubic-bezier(0.600,0.040,0.980,0.335); }
+            70%  { transform: translate3d(-50%, -65%, 0); }
+            100% { transform: translate3d(-50%, 0, 0);    animation-timing-function: cubic-bezier(0.600,0.040,0.980,0.335); }
+        }
+        .tz-untitled__shutters::after {
+            top: 50%;
+            animation: tz-openBottom 5s infinite;
+        }
+        @keyframes tz-openBottom {
+            0%   { transform: translate3d(-50%, 0, 0);   animation-timing-function: cubic-bezier(0.8,0.00,0.1,1); }
+            40%  { transform: translate3d(-50%, 65%, 0); animation-timing-function: cubic-bezier(0.600,0.040,0.980,0.335); }
+            70%  { transform: translate3d(-50%, 65%, 0); }
+            100% { transform: translate3d(-50%, 0, 0);   animation-timing-function: cubic-bezier(0.600,0.040,0.980,0.335); }
+        }
+        @media (max-width: 780px) {
+            .tz-untitled { height: 260px; }
+        }
+        /* ── end slideshow ── */
+
         @media (max-width: 780px) {
             .hero {
                 padding: 6rem 1.5rem 3rem;
@@ -967,7 +1092,52 @@
         <div class="hero-content">
             <div class="hero-badge">⭐ Über 500 realisierte Projekte in NRW ⭐</div>
             <h1>Terrassenüberdachung <span class="city-highlight" id="user-city">NRW</span></h1>
+
+            <!-- Shutter Slideshow -->
+            <div class="tz-untitled">
+                <div class="tz-untitled__slides">
+                    <div class="tz-untitled__slide">
+                        <div class="tz-untitled__slideBg" style="background-image:url('images/Terrassenüberdachung-13.webp');">
+						  <div class="tz-slide-label">Vordach Tür</div>
+						  
+  			</div>
+                    </div>
+                    <div class="tz-untitled__slide">
+                        <div class="tz-untitled__slideBg" style="background-image:url('images/Haus_eingang.jpeg');">
+						<div class="tz-slide-label">Haus Eingang</div></div>
+						 
+                    </div>
+                    <div class="tz-untitled__slide">
+                        <div class="tz-untitled__slideBg" style="background-image:url('images/Terrassenüberdachung-12.webp');"></div>
+						 <div class="tz-slide-label">Terrassenüberdachung</div>
+                    </div>
+                    <div class="tz-untitled__slide">
+                        <div class="tz-untitled__slideBg" style="background-image:url('images/terrassenüberdachung-3.JPG');"></div>
+						 <div class="tz-slide-label">Terrassenüberdachung</div>
+                    </div>
+                    <div class="tz-untitled__slide">
+                        <div class="tz-untitled__slideBg" style="background-image:url('images/Terrassenüberdachung-18.webp');"></div>
+						 <div class="tz-slide-label">Wintergarten</div>
+                    </div>
+                    <div class="tz-untitled__slide">
+                        <div class="tz-untitled__slideBg" style="background-image:url('images/Terrassenüberdachung-10.webp');"></div>
+						 <div class="tz-slide-label">Terrassenüberdachung</div>
+                    </div>
+                    <div class="tz-untitled__slide">
+                        <div class="tz-untitled__slideBg" style="background-image:url('images/terrassenüberdachung30.jpg');"></div>
+						 <div class="tz-slide-label">Terrassenüberdachung</div>
+                    </div>
+                    <div class="tz-untitled__slide">
+                        <div class="tz-untitled__slideBg" style="background-image:url('images/Buro-recption.jpeg');"></div>
+						 <div class="tz-slide-label">Büro Rezeption</div>
+                    </div>
+                </div>
+                <div class="tz-untitled__shutters"></div>
+            </div>
+
             <p>
+			
+
                 <strong>Ihr Experte für premium Terrassenüberdachungen, Wintergärten, Carports und Beschattungen</strong> in <span id="hero-cities">Gelsenkirchen, Essen, Bochum, Dortmund, Düsseldorf und ganz Nordrhein-Westfalen</span>. 
                 15 Jahre Erfahrung, höchste Qualität und persönliche Beratung – verwandeln Sie Ihren Außenbereich in eine ganzjährige Wohlfühloase.
             </p>
@@ -1324,7 +1494,7 @@
                         <div class="contact-icon">📧</div>
                         <div class="contact-item-content">
                             <h4>E-Mail</h4>
-                            <a href="mailto:info@terra-z.de">info@terra-z.de</a></span></a>
+                          <a href="mailto:info@terra-z.de">📧 info@terra-z.de</a></span></a>
                         </div>
                     </div>
                     <div class="contact-item">
@@ -1414,7 +1584,7 @@
             <div class="footer-section">
                 <h4>Kontakt</h4>
                 <a href="tel:+491638641737">📞 0163 8641737</a>
-                <a href="mailto:info@terra-z.de">📧 info@terra-z.de</a>
+                 <a href="mailto:info@terra-z.de">📧 info@terra-z.de</a></span></a>
                 <p style="margin-top: 1rem; color: var(--text-secondary); font-size: 0.9rem;">Almastr. 52, 45886 Gelsenkirchen</p>
             </div>
         </div>
@@ -1424,7 +1594,7 @@
         </div>
     </footer>
 
-   <script>
+   <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         // City Detection & Dynamic Content
         const cityMap = {
             'Gelsenkirchen': { name: 'Gelsenkirchen', region: 'im Zentrum des Ruhrgebiets' },
@@ -1523,16 +1693,4 @@
 
         // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-            });
-        });
-
-
- </script>
- </body>
- </html>
+            anchor.
