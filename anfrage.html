@@ -673,6 +673,159 @@
             .footer-content { grid-template-columns: 1fr; }
             .hero-trust-row { gap: 1rem; }
         }
+	/* ─────────────────────────────────────────
+   MOBILE COMPATIBILITY
+───────────────────────────────────────── */
+
+/* Hamburger button */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 6px;
+    z-index: 1200;
+    flex-shrink: 0;
+}
+.hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--text-primary);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+.hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* Mobile nav overlay */
+.mobile-menu-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(10,10,10,0.97);
+    backdrop-filter: blur(20px);
+    z-index: 1100;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    overflow-y: auto;
+}
+.mobile-menu-overlay.open { display: flex; }
+.mobile-menu-overlay ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0;
+    margin: 0 0 2rem 0;
+}
+.mobile-menu-overlay ul li a {
+    display: block;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-family: 'Sora', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    padding: 0.85rem 2rem;
+    transition: color 0.3s ease;
+    text-align: center;
+}
+.mobile-menu-overlay ul li a:hover,
+.mobile-menu-overlay ul li a.active { color: var(--primary); }
+.mobile-menu-cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 0 1.5rem;
+    width: 100%;
+    max-width: 320px;
+}
+.mobile-menu-cta .btn-primary {
+    width: 100%;
+    text-align: center;
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+}
+.mobile-menu-cta .mobile-wa {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-family: 'Inter', sans-serif;
+    transition: color 0.3s ease;
+}
+.mobile-menu-cta .mobile-wa:hover { color: #25D366; }
+
+/* Show hamburger, hide desktop nav on tablet/mobile */
+@media (max-width: 1024px) {
+    .nav-links { display: none; }
+    .cta-button { display: none; }
+    .hamburger { display: flex; }
+    .whatsapp-btn span { display: none; }
+    .whatsapp-btn { padding: 0; margin-right: 0; box-shadow: none; }
+    .whatsapp-btn img { width: 42px; }
+    nav { gap: 1rem; }
+}
+
+@media (max-width: 600px) {
+    nav { padding: 0.9rem 1rem; gap: 0.5rem; }
+    .logo img { height: 36px; }
+    .whatsapp-btn img { width: 36px; }
+    .hero { padding: 5rem 1rem 2.5rem; }
+    .hero-badge { font-size: 0.78rem; padding: 0.45rem 0.9rem; margin-bottom: 1rem; }
+    .hero h1 { font-size: clamp(1.7rem, 6.5vw, 2.6rem); margin-bottom: 0.85rem; }
+    .hero p { font-size: 0.95rem; margin-bottom: 1.5rem; }
+    .hero-buttons { flex-direction: column; align-items: center; gap: 0.8rem; }
+    .btn-primary, .btn-secondary { width: 100%; max-width: 300px; text-align: center; padding: 0.95rem 1.25rem; font-size: 0.97rem; }
+    .trust-indicators { flex-direction: column; align-items: center; gap: 0.75rem; margin-top: 2rem; }
+    .trust-item { font-size: 0.88rem; }
+    .tz-untitled { height: 210px; margin: 1rem auto 1.25rem; border-radius: 10px; }
+    .tz-slide-label { font-size: 1rem; padding: 5px 12px; }
+    .stats { padding: 2.5rem 1rem; }
+    .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
+    .stat-number { font-size: 2.3rem; }
+    .stat-label { font-size: 0.85rem; }
+    .seo-content { padding: 3rem 1rem; }
+    .seo-content h2 { font-size: 1.65rem; }
+    .seo-content p { font-size: 0.97rem; }
+    .services { padding: 3.5rem 1rem; }
+    .section-header { margin-bottom: 2rem; }
+    .section-header h2 { font-size: clamp(1.55rem, 5vw, 2.4rem); }
+    .section-header p { font-size: 0.97rem; }
+    .section-label { font-size: 0.78rem; padding: 0.35rem 0.9rem; }
+    .services-grid { grid-template-columns: 1fr; gap: 1.1rem; }
+    .service-image { height: 200px; }
+    .service-content { padding: 1.25rem; }
+    .service-content h3 { font-size: 1.3rem; }
+    .features { padding: 3.5rem 1rem; }
+    .features-grid { grid-template-columns: 1fr; gap: 1rem; margin-top: 1.75rem; }
+    .feature-card { padding: 1.5rem; }
+    .cities { padding: 3.5rem 1rem; }
+    .cities-grid { grid-template-columns: repeat(2, 1fr); gap: 0.65rem; margin-top: 2rem; }
+    .city-tag { padding: 0.9rem 0.75rem; border-radius: 10px; }
+    .city-tag h3 { font-size: 0.92rem; }
+    .contact { padding: 3.5rem 1rem; }
+    .contact-grid { grid-template-columns: 1fr; gap: 1.75rem; margin-top: 2rem; }
+    .contact-form { padding: 1.25rem; }
+    footer { padding: 2.5rem 1rem 1.25rem; }
+    .footer-content { grid-template-columns: 1fr; gap: 1.75rem; }
+    .footer-services .services-columns { grid-template-columns: 1fr 1fr; gap: 0 0.75rem; }
+    .footer-bottom { font-size: 0.78rem; }
+}
+
+@media (max-width: 380px) {
+    .hero h1 { font-size: 1.6rem; }
+    .stats-grid { grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .stat-number { font-size: 2rem; }
+    .cities-grid { grid-template-columns: 1fr 1fr; }
+}	
     </style>
 </head>
 <body>
@@ -696,9 +849,30 @@
                 <img alt="WhatsApp" src="images/WhatsAppButtonGreenMedium.svg" />  
                 <span>WhatsApp</span>
             </a>
+		<!-- Hamburger (mobile only) -->
+            <button class="hamburger" id="hamburger" aria-label="Menü öffnen" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>	
         </nav>
     </header>
-
+ <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay">
+        <ul>
+            <li><a href="index.html" class="active" onclick="closeMobileMenu()">Home</a></li>
+            <li><a href="terrassenueberdachung.html" onclick="closeMobileMenu()">Terrassenüberdachung</a></li>
+            <li><a href="wintergarten.html" onclick="closeMobileMenu()">Wintergarten</a></li>
+            <li><a href="carport.html" onclick="closeMobileMenu()">Carport</a></li>
+            <li><a href="beschattungen.html" onclick="closeMobileMenu()">Beschattungen</a></li>
+            <li><a href="galerie.html" onclick="closeMobileMenu()">Galerie</a></li>
+            <li><a href="#standorte" onclick="closeMobileMenu()">Standorte</a></li>
+        </ul>
+        <div class="mobile-menu-cta">
+            <a href="anfrage.html" class="btn-primary" onclick="closeMobileMenu()">📞 Kostenlose Beratung</a>
+            <a href="https://wa.me/491638641737" class="mobile-wa">💬 WhatsApp schreiben</a>
+        </div>
+    </div>
     <!-- ── Page Hero ── -->
     <div class="page-hero">
         <div class="page-hero-content">
@@ -1265,6 +1439,36 @@
                 submitBtn.style.opacity = '1';
             }
         });
+        // Mobile Menu
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
+
+        function openMobileMenu() {
+            hamburger.classList.add('open');
+            hamburger.setAttribute('aria-expanded', 'true');
+            mobileMenuOverlay.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMobileMenu() {
+            hamburger.classList.remove('open');
+            hamburger.setAttribute('aria-expanded', 'false');
+            mobileMenuOverlay.classList.remove('open');
+            document.body.style.overflow = '';
+        }
+
+        hamburger.addEventListener('click', () => {
+            mobileMenuOverlay.classList.contains('open') ? closeMobileMenu() : openMobileMenu();
+        });
+
+        mobileMenuOverlay.addEventListener('click', (e) => {
+            if (e.target === mobileMenuOverlay) closeMobileMenu();
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeMobileMenu();
+        });
+    
     </script>
 </body>
 </html>
