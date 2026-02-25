@@ -2,7 +2,7 @@
 <html lang="de">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
     <title>Terrassenüberdachung NRW - Alle Varianten | Terra-Z</title>
 	<link rel="icon" href="logo.webp" type="image/x-icon">
     <meta name="description" content="Terrassenüberdachung aus Aluminium, Holz oder Glas. Freistehend, anlehnend oder mit Schiebedach. Maßgeschneiderte Lösungen in Gelsenkirchen, Essen, Dortmund.">
@@ -172,42 +172,54 @@
     nav { padding: 0.9rem 1rem; gap: 0.5rem; }
     .logo img { height: 36px; }
     .whatsapp-btn img { width: 36px; }
-    .hero { padding: 5rem 1rem 2.5rem; }
-    .hero-badge { font-size: 0.78rem; padding: 0.45rem 0.9rem; margin-bottom: 1rem; }
-    .hero h1 { font-size: clamp(1.7rem, 6.5vw, 2.6rem); margin-bottom: 0.85rem; }
-    .hero p { font-size: 0.95rem; margin-bottom: 1.5rem; }
-    .hero-buttons { flex-direction: column; align-items: center; gap: 0.8rem; }
-    .btn-primary, .btn-secondary { width: 100%; max-width: 300px; text-align: center; padding: 0.95rem 1.25rem; font-size: 0.97rem; }
-    .trust-indicators { flex-direction: column; align-items: center; gap: 0.75rem; margin-top: 2rem; }
-    .trust-item { font-size: 0.88rem; }
-    .tz-untitled { height: 210px; margin: 1rem auto 1.25rem; border-radius: 10px; }
-    .tz-slide-label { font-size: 1rem; padding: 5px 12px; }
-    .stats { padding: 2.5rem 1rem; }
-    .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
-    .stat-number { font-size: 2.3rem; }
-    .stat-label { font-size: 0.85rem; }
-    .seo-content { padding: 3rem 1rem; }
-    .seo-content h2 { font-size: 1.65rem; }
-    .seo-content p { font-size: 0.97rem; }
-    .services { padding: 3.5rem 1rem; }
+
+    /* Page Hero — correct class names for this page */
+    .page-hero { padding: 5rem 1rem 2.5rem; min-height: auto; }
+    .hero-content { grid-template-columns: 1fr; gap: 2rem; }
+    .hero-text h1 { font-size: clamp(1.7rem, 6.5vw, 2.6rem); margin-bottom: 1rem; }
+    .hero-text .subtitle { font-size: 1rem; }
+    .intro-text { font-size: 0.95rem; line-height: 1.8; margin-bottom: 1.25rem; }
+    .highlight-box { padding: 1rem; margin: 1.25rem 0; }
+    .highlight-box p { font-size: 0.93rem; }
+    .hero-image { height: 260px; border-radius: 14px; }
+    .btn-primary { padding: 0.95rem 1.75rem; font-size: 0.97rem; width: 100%; text-align: center; }
+
+    /* Types section */
+    .types-section { padding: 3.5rem 1rem; }
+    .types-grid { grid-template-columns: 1fr; gap: 1.25rem; }
+    .type-content { padding: 1.25rem 1.5rem 1.5rem; }
+    .type-content h3 { font-size: 1.35rem; }
+    .type-content p { font-size: 0.95rem; }
+    .type-image { height: 200px; }
+
+    /* Materials section */
+    .materials-section { padding: 3.5rem 1rem; }
+    .materials-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+    .material-card { padding: 2rem 1.5rem; }
+    .material-card h3 { font-size: 1.3rem; }
+    .material-card p { font-size: 0.95rem; }
+
+    /* Features section */
+    .features-section { padding: 3.5rem 1rem; }
+    .features-grid { grid-template-columns: 1fr; gap: 1rem; margin-top: 1.75rem; }
+    .feature-card { padding: 1.5rem; }
+    .feature-card h3 { font-size: 1.1rem; }
+    .feature-card p { font-size: 0.9rem; }
+    .feature-icon { width: 55px; height: 55px; font-size: 1.6rem; }
+
+    /* Section headers */
     .section-header { margin-bottom: 2rem; }
     .section-header h2 { font-size: clamp(1.55rem, 5vw, 2.4rem); }
     .section-header p { font-size: 0.97rem; }
     .section-label { font-size: 0.78rem; padding: 0.35rem 0.9rem; }
-    .services-grid { grid-template-columns: 1fr; gap: 1.1rem; }
-    .service-image { height: 200px; }
-    .service-content { padding: 1.25rem; }
-    .service-content h3 { font-size: 1.3rem; }
-    .features { padding: 3.5rem 1rem; }
-    .features-grid { grid-template-columns: 1fr; gap: 1rem; margin-top: 1.75rem; }
-    .feature-card { padding: 1.5rem; }
-    .cities { padding: 3.5rem 1rem; }
-    .cities-grid { grid-template-columns: repeat(2, 1fr); gap: 0.65rem; margin-top: 2rem; }
-    .city-tag { padding: 0.9rem 0.75rem; border-radius: 10px; }
-    .city-tag h3 { font-size: 0.92rem; }
-    .contact { padding: 3.5rem 1rem; }
-    .contact-grid { grid-template-columns: 1fr; gap: 1.75rem; margin-top: 2rem; }
-    .contact-form { padding: 1.25rem; }
+
+    /* CTA box */
+    .cta-section { padding: 3rem 1rem; }
+    .cta-box { padding: 2rem 1.25rem; border-radius: 18px; }
+    .cta-box h2 { font-size: 1.75rem; margin-bottom: 1rem; }
+    .cta-box p { font-size: 1rem; margin-bottom: 2rem; }
+
+    /* Footer */
     footer { padding: 2.5rem 1rem 1.25rem; }
     .footer-content { grid-template-columns: 1fr; gap: 1.75rem; }
     .footer-services .services-columns { grid-template-columns: 1fr 1fr; gap: 0 0.75rem; }
@@ -215,10 +227,9 @@
 }
 
 @media (max-width: 380px) {
-    .hero h1 { font-size: 1.6rem; }
-    .stats-grid { grid-template-columns: 1fr 1fr; gap: 1rem; }
-    .stat-number { font-size: 2rem; }
-    .cities-grid { grid-template-columns: 1fr 1fr; }
+    .hero-text h1 { font-size: 1.6rem; }
+    .hero-image { height: 210px; }
+    .cta-box h2 { font-size: 1.5rem; }
 }
     </style>
 </head>
@@ -252,17 +263,20 @@
     <!-- Mobile Menu Overlay -->
     <div class="mobile-menu-overlay" id="mobileMenuOverlay">
         <ul>
-            <li><a href="index.html" class="active" onclick="closeMobileMenu()">Home</a></li>
-            <li><a href="terrassenueberdachung.html" onclick="closeMobileMenu()">Terrassenüberdachung</a></li>
+            <li><a href="index.html"  onclick="closeMobileMenu()">Home</a></li>
+            <li><a href="terrassenueberdachung.html" class="active" onclick="closeMobileMenu()">Terrassenüberdachung</a></li>
             <li><a href="wintergarten.html" onclick="closeMobileMenu()">Wintergarten</a></li>
             <li><a href="carport.html" onclick="closeMobileMenu()">Carport</a></li>
             <li><a href="beschattungen.html" onclick="closeMobileMenu()">Beschattungen</a></li>
-            <li><a href="galerie.html" onclick="closeMobileMenu()">Galerie</a></li>
-            <li><a href="#standorte" onclick="closeMobileMenu()">Standorte</a></li>
+            <li><a href="galerie.html"  onclick="closeMobileMenu()">Galerie</a></li>
+            <li><a href="index.html#standorte" onclick="closeMobileMenu()">Standorte</a></li>
         </ul>
         <div class="mobile-menu-cta">
-            <a href="anfrage.html" class="btn-primary" onclick="closeMobileMenu()">📞 Kostenlose Beratung</a>
-            <a href="https://wa.me/491638641737" class="mobile-wa">💬 WhatsApp schreiben</a>
+              <a href="anfrage.html" class="btn-primary" onclick="closeMobileMenu()">📞 Kostenlose Beratung</a>
+            <a class="whatsapp-btn" href="https://wa.me/491638641737">
+                <img alt="WhatsApp" src="images/WhatsAppButtonGreenMedium.svg" />  
+                <span>WhatsApp</span>
+            </a>
         </div>
     </div>
 

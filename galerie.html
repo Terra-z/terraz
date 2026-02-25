@@ -80,7 +80,8 @@
         }
         .nav-links a.active, .nav-links a:hover { color: var(--text-primary); }
         .nav-links a.active::after, .nav-links a:hover::after { width: 100%; }
-        .cta-button {
+        .
+		{
             background: linear-gradient(135deg, var(--primary), var(--primary-dark));
             color: #fff;
             padding: .75rem 1.75rem;
@@ -90,6 +91,16 @@
             transition: all .3s ease;
             box-shadow: 0 4px 15px rgba(255,107,53,.3);
         }
+		.cta-button {
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: #fff;
+    padding: .75rem 1.75rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all .3s ease;
+    box-shadow: 0 4px 15px rgba(255,107,53,.3);
+}
         .cta-button:hover {
             transform: translateY(-2px);
             box-shadow: var(--shadow-glow);
@@ -448,6 +459,7 @@
     .whatsapp-btn { padding: 0; margin-right: 0; box-shadow: none; }
     .whatsapp-btn img { width: 42px; }
     nav { gap: 1rem; }
+	.mobile-menu-cta .cta-button { display: inline-block; }
 }
 
 @media (max-width: 600px) {
@@ -528,22 +540,25 @@
                 <span></span>
                 <span></span>
             </button>
- </nav>
+		</nav>
     </header>
-	 <!-- Mobile Menu Overlay -->
+<!-- Mobile Menu Overlay -->
     <div class="mobile-menu-overlay" id="mobileMenuOverlay">
         <ul>
-            <li><a href="index.html" class="active" onclick="closeMobileMenu()">Home</a></li>
+            <li><a href="index.html"  onclick="closeMobileMenu()">Home</a></li>
             <li><a href="terrassenueberdachung.html" onclick="closeMobileMenu()">Terrassenüberdachung</a></li>
             <li><a href="wintergarten.html" onclick="closeMobileMenu()">Wintergarten</a></li>
             <li><a href="carport.html" onclick="closeMobileMenu()">Carport</a></li>
             <li><a href="beschattungen.html" onclick="closeMobileMenu()">Beschattungen</a></li>
-            <li><a href="galerie.html" onclick="closeMobileMenu()">Galerie</a></li>
-            <li><a href="#standorte" onclick="closeMobileMenu()">Standorte</a></li>
+            <li><a href="galerie.html"  class="active" onclick="closeMobileMenu()">Galerie</a></li>
+            <li><a href="index.html#standorte" onclick="closeMobileMenu()">Standorte</a></li>
         </ul>
         <div class="mobile-menu-cta">
-            <a href="anfrage.html" class="btn-primary" onclick="closeMobileMenu()">📞 Kostenlose Beratung</a>
-            <a href="https://wa.me/491638641737" class="mobile-wa">💬 WhatsApp schreiben</a>
+              <a href="anfrage.html" class="cta-button" onclick="closeMobileMenu()">📞 Kostenlose Beratung</a>
+            <a class="whatsapp-btn" href="https://wa.me/491638641737">
+                <img alt="WhatsApp" src="images/WhatsAppButtonGreenMedium.svg" />  
+                <span>WhatsApp</span>
+            </a>
         </div>
     </div>
 
@@ -783,7 +798,10 @@
 
         // Start the gallery
      initGallery();
-	  const hamburger = document.getElementById('hamburger');
+	
+	
+	// Mobile Menu
+        const hamburger = document.getElementById('hamburger');
         const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
 
         function openMobileMenu() {
@@ -811,7 +829,6 @@
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') closeMobileMenu();
         });
-    
     </script>
 </body>
 </html>
