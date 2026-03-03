@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+    <title>Impressum | Terra-Z Terrassenüberdachung</title>
+    <link rel="icon" href="logo.webp" type="image/x-icon">
+    <meta name="description" content="Impressum der Terra-Z Tamer Celik – Ihr Experte für Terrassenüberdachungen in NRW.">
+    <meta name="robots" content="noindex, follow">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Sora:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #FF6B35;
+            --primary-light: #FF8C5A;
+            --primary-dark: #E5531F;
+            --accent: #FFB800;
+            --accent-light: #FFC933;
+            --bg-primary: #0A0A0A;
+            --bg-secondary: #141414;
+            --bg-tertiary: #1E1E1E;
+            --text-primary: #FFFFFF;
+            --text-secondary: #B4B4B4;
+            --text-muted: #6B6B6B;
+            --border-subtle: rgba(255, 255, 255, 0.08);
+            --border-medium: rgba(255, 255, 255, 0.12);
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.4);
+            --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.5);
+            --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.6);
+            --shadow-glow: 0 0 40px rgba(255, 107, 53, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Sora', sans-serif;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(10, 10, 10, 0.9);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-subtle);
+            transition: all 0.3s ease;
+        }
+
+        header.scrolled {
+            background: rgba(10, 10, 10, 0.95);
+            box-shadow: var(--shadow-md);
+        }
+
+        nav {
+            max-width: 1450px;
+            margin: 0 auto;
+            padding: 1.2rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .logo img {
+            height: 60px;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover img {
+            transform: scale(1.05);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--text-primary);
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            padding: 0.75rem 1.75rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-glow);
+        }
+
+        /* WhatsApp Button */
+        .whatsapp-btn {
+            transition: all 400ms;
+            color: white;
+            padding: 0.25rem .95rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 100;
+            transition: all 0.3s ease;
+            margin-right: 5px;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            box-shadow: 2px 10px 15px rgba(255, 107, 53, 0.3);
+        }
+
+        .whatsapp-btn img {
+            width: 50px;     
+            display: block;   
+            }
+
+        .whatsapp-btn:hover {
+            transform: scale(1.2);
+        }
+		
+		.whatsapp-btn span {
+            top: 0;
+            font-family: "Roboto", sans-serif;
+            font-weight: bold;
+            color: white;
+            opacity: 1;
+            transition: all 400ms;
+        }
+
+        .whatsapp-btn:hover + span {
+            transform: rotateZ(0deg) translateX(0px);
+            opacity: 1;
+        }
+
+        /* Hamburger */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 25px;
+            height: 2px;
+            background: var(--text-primary);
+            transition: all 0.3s ease;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 999;
+            background: rgba(10,10,10,0.97);
+            backdrop-filter: blur(20px);
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .mobile-menu-overlay.open {
+            display: flex;
+        }
+
+        .mobile-menu-overlay ul {
+            list-style: none;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .mobile-menu-overlay ul a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-size: 1.3rem;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .mobile-menu-overlay ul a:hover,
+        .mobile-menu-overlay ul a.active {
+            color: var(--primary);
+        }
+
+        .mobile-menu-cta {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        /* Page Hero */
+        .page-hero {
+            padding: 10rem 2rem 5rem;
+            text-align: center;
+            background:
+                linear-gradient(135deg, rgba(10, 10, 10, 0.95), rgba(10, 10, 10, 0.85)),
+                radial-gradient(circle at 30% 50%, rgba(255, 107, 53, 0.12), transparent 60%),
+                radial-gradient(circle at 70% 70%, rgba(255, 184, 0, 0.08), transparent 50%);
+            border-bottom: 1px solid var(--border-subtle);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 50% 0%, rgba(255, 107, 53, 0.08), transparent 60%);
+        }
+
+        .page-hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .page-hero .section-label {
+            display: inline-block;
+            padding: 0.5rem 1.25rem;
+            background: rgba(255, 107, 53, 0.1);
+            border: 1px solid rgba(255, 107, 53, 0.3);
+            border-radius: 50px;
+            color: var(--primary);
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .page-hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            background: linear-gradient(135deg, #FFFFFF 0%, #B4B4B4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+        }
+
+        .page-hero p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Main Content */
+        .impressum-section {
+            padding: 6rem 2rem;
+        }
+
+        .impressum-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .impressum-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-subtle);
+            border-radius: 24px;
+            padding: 3rem;
+            margin-bottom: 2rem;
+            transition: border-color 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .impressum-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .impressum-card:hover {
+            border-color: rgba(255, 107, 53, 0.2);
+        }
+
+        .impressum-card:hover::before {
+            opacity: 1;
+        }
+
+        .card-icon {
+            width: 52px;
+            height: 52px;
+            background: rgba(255, 107, 53, 0.12);
+            border: 1px solid rgba(255, 107, 53, 0.25);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .impressum-card h2 {
+            font-size: 1.35rem;
+            margin-bottom: 1.25rem;
+            color: #FFFFFF;
+        }
+
+        .impressum-card h2 span {
+            color: #FFFFFF;
+        }
+
+        .info-row {
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            padding: 0.75rem 1rem;
+            background: var(--bg-tertiary);
+            border-radius: 10px;
+            border: 1px solid var(--border-subtle);
+        }
+
+        .info-label {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            min-width: 140px;
+            padding-top: 0.1rem;
+        }
+
+        .info-value {
+            color: var(--text-primary);
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        .info-value a {
+            color: var(--primary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .info-value a:hover {
+            color: var(--accent);
+        }
+
+        .legal-text {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        .legal-text p {
+            margin-bottom: 0.75rem;
+        }
+
+        .legal-text p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border-subtle);
+            padding: 4rem 2rem 2rem;
+        }
+
+        .footer-content {
+            max-width: 1450px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 2fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-brand h3 {
+            font-size: 1.75rem;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+        }
+
+        .footer-brand p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .footer-section h4 {
+            font-size: 1rem;
+            margin-bottom: 1.25rem;
+            color: var(--text-primary);
+        }
+
+        .footer-section a,
+        .footer-section p {
+            display: block;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--primary);
+        }
+
+        .footer-bottom {
+            max-width: 1450px;
+            margin: 0 auto;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-subtle);
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.875rem;
+        }
+
+        .footer-bottom a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-bottom a:hover {
+            color: var(--primary);
+        }
+
+        /* Footer services columns */
+        .services-columns {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0 1rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links, .cta-button, .whatsapp-btn { display: none; }
+            .hamburger { display: flex; }
+
+            .page-hero { padding: 8rem 1.5rem 4rem; }
+            .page-hero h1 { font-size: 2.2rem; }
+
+            .impressum-section { padding: 4rem 1.5rem; }
+            .impressum-card { padding: 2rem 1.5rem; }
+
+            .info-item { flex-direction: column; gap: 0.3rem; }
+            .info-label { min-width: unset; }
+
+            .footer-content { grid-template-columns: 1fr; gap: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header id="header">
+        <nav>
+            <a href="index.html" class="logo">
+                <img src="logo.webp" alt="Terra-Z Terrassenüberdachung Logo">
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="terrassenueberdachung.html">Terrassenüberdachung</a></li>
+                <li><a href="wintergarten.html">Wintergarten</a></li>
+                <li><a href="carport.html">Carport</a></li>
+                <li><a href="beschattungen.html">Beschattungen</a></li>
+                <li><a href="galerie.html">Galerie</a></li>
+                <li><a href="index.html#standorte">Standorte</a></li>
+            </ul>
+            <a href="anfrage.html" class="cta-button">Jetzt Anfragen</a>
+            <a class="whatsapp-btn" href="https://wa.me/491638641737">
+                <img alt="WhatsApp" src="images/WhatsAppButtonGreenMedium.svg" />
+                <span>WhatsApp</span>
+            </a>
+            <button class="hamburger" id="hamburger" aria-label="Menü öffnen" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay" role="dialog" aria-modal="true" aria-label="Navigation">
+        <ul>
+            <li><a href="index.html" onclick="closeMobileMenu()">Home</a></li>
+            <li><a href="terrassenueberdachung.html" onclick="closeMobileMenu()">Terrassenüberdachung</a></li>
+            <li><a href="wintergarten.html" onclick="closeMobileMenu()">Wintergarten</a></li>
+            <li><a href="carport.html" onclick="closeMobileMenu()">Carport</a></li>
+            <li><a href="beschattungen.html" onclick="closeMobileMenu()">Beschattungen</a></li>
+            <li><a href="galerie.html" onclick="closeMobileMenu()">Galerie</a></li>
+            <li><a href="index.html#standorte" onclick="closeMobileMenu()">Standorte</a></li>
+        </ul>
+        <div class="mobile-menu-cta">
+            <a href="anfrage.html" class="cta-button" onclick="closeMobileMenu()">📞 Kostenlose Beratung</a>
+            <a class="whatsapp-btn" href="https://wa.me/491638641737">
+                <img alt="WhatsApp" src="images/WhatsAppButtonGreenMedium.svg" />
+                <span>WhatsApp</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="page-hero-content">
+            <div class="section-label">Rechtliches</div>
+            <h1>Datenschutz</h1>
+        </div>
+    </section>
+
+    <!-- Impressum Content -->
+    <section class="impressum-section">
+        <div class="impressum-container">
+
+            <!-- Unternehmensdaten -->
+            <div class="impressum-card">
+                
+
+            </div>
+
+
+
+
+
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>Terra-Z</h3>
+                <p>Ihr Experte für Terrassenüberdachungen, Wintergärten, Carports und Beschattungen in NRW. Qualität, Erfahrung und Service auf höchstem Niveau seit über 15 Jahren.</p>
+            </div>
+
+            <div class="footer-section footer-services">
+                <h4>Leistungen</h4>
+                <div class="services-columns">
+                    <div>
+                        <a href="terrassenueberdachung.html">Terrassenüberdachung</a>
+                        <a href="wintergarten.html">Wintergarten</a>
+                        <a href="carport.html">Carport</a>
+                        <a href="beschattungen.html">Beschattungen</a>
+                        <a href="terrassenueberdachung.html">Vordach Haustür</a>
+                    </div>
+                    <div>
+                        <a href="terrassenueberdachung.html">Polycarbonat</a>
+                        <a href="galerie.html">Sandwich Panele</a>
+                        <a href="beschattungen.html">Sonnenschutz</a>
+                        <a href="galerie.html">Elektromarkise</a>
+                        <a href="galerie.html">Galerie</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h4>Standorte</h4>
+                <a href="index.html#standorte">Gelsenkirchen</a>
+                <a href="index.html#standorte">Essen</a>
+                <a href="index.html#standorte">Bochum</a>
+                <a href="index.html#standorte">Dortmund</a>
+                <a href="index.html#standorte">Düsseldorf</a>
+            </div>
+
+            <div class="footer-section">
+                <h4>Kontakt</h4>
+                <a href="tel:+491638641737">📞 0163 8641737</a>
+                <a href="mailto:info@terra-z.de">📧 info@terra-z.de</a>
+                <p style="margin-top: 1rem; color: var(--text-secondary); font-size: 0.9rem;">Almastr. 52, 45886 Gelsenkirchen</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Terra-Z. Alle Rechte vorbehalten. | <a href="datenschutz.html">Datenschutz</a> | <a href="impressum.html" style="color: var(--primary);">Impressum</a></p>
+        </div>
+    </footer>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        
+        // ── Mobile Menu ──
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
+
+        function openMobileMenu() {
+            hamburger.classList.add('open');
+            hamburger.setAttribute('aria-expanded', 'true');
+            mobileMenuOverlay.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMobileMenu() {
+            hamburger.classList.remove('open');
+            hamburger.setAttribute('aria-expanded', 'false');
+            mobileMenuOverlay.classList.remove('open');
+            document.body.style.overflow = '';
+        }
+
+        hamburger.addEventListener('click', () => {
+            if (mobileMenuOverlay.classList.contains('open')) {
+                closeMobileMenu();
+            } else {
+                openMobileMenu();
+            }
+        });
+
+        // Close on overlay backdrop click
+        mobileMenuOverlay.addEventListener('click', (e) => {
+            if (e.target === mobileMenuOverlay) closeMobileMenu();
+        });
+
+        // Close on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeMobileMenu();
+        });
+</script>
+</body>
+</html>
