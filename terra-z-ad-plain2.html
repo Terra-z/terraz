@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Terra-Z</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@600;700&family=Roboto:wght@400;500&display=swap');
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { width:300px; height:250px; overflow:hidden; font-family:'Roboto',sans-serif; background:#111; }
+
+  .ad { width:300px; height:250px; position:relative; overflow:hidden; cursor:pointer;  }
+
+  /* BG SLIDES */
+  .bg-slide { position:absolute; inset:0; background-size:cover; background-position:center; opacity:1;  z-index:0; background-image: url('Freistehende_Uberdachung.png');}
+  .bg-overlay { position:absolute; inset:0; z-index:1; background:linear-gradient(to bottom, rgba(0,0,0,0.80) 0%, rgba(0,0,0,0.42) 40%, rgba(0,0,0,0.75) 100%); }
+
+ 
+
+  /* BORDER GLOW */
+  .border-glow {
+    position:absolute; inset:0; z-index:24; pointer-events:none;
+    border:2px solid rgba(255,140,0,0.6);
+    box-shadow: inset 0 0 10px rgba(255,120,0,0.35), 0 0 12px rgba(255,120,0,0.6), 0 0 24px rgba(255,90,0,0.3);
+    animation:borderPulse 2s ease-in-out infinite;
+  }
+  
+  @keyframes sweepLeft  { 0%{bottom:-80px} 100%{bottom:250px} }
+
+  /* LOGO */
+  .logo { position:absolute; top:0.1px; right:6px; z-index:20; width:75px; height:45px;  }
+
+  /* TITLE */
+  .title-block { position:absolute; top:6px; left:6px; right:25px; z-index:10; }
+  .title-main {
+    font-family:'Oswald','Arial Black',sans-serif;
+    font-size:18px; font-weight:900; letter-spacing:0px; line-height:1.25;
+    color:#FFAA00; text-transform:uppercase;
+    text-shadow:1px 1px 4px rgba(0,0,0,1), 0 0 8px rgba(0,0,0,0.8);
+  }
+  .title-nrw {
+    font-family:'Oswald','Arial Black',sans-serif;
+    font-size:16px; font-weight:900; color:#FFB347;
+    letter-spacing:1.8px; text-transform:uppercase;
+    text-shadow:1px 1px 3px rgba(0,0,0,0.9);
+    text-align:center; display:block; width:100%;
+  }
+  .divider { width:50px; height:1.5px; margin-top:3px; background:linear-gradient(90deg,#FF8C00,transparent); box-shadow:0 0 5px #FF8C00; }
+
+  /* BULLETS */
+  .bullets { position:absolute; top:88px; left:9px; right:9px; z-index:10; display:grid; grid-template-columns:1fr 1fr; gap:2px 8px; }
+  .bullet { font-size:12.3px; color:#ffffff; font-weight:600; display:flex; align-items:center; gap:3px; text-shadow:0 1px 4px rgba(0,0,0,0.95); white-space:nowrap; line-height:1.6; }
+  .bi { color:#FF8C00; font-style:normal; font-size:11px; filter:drop-shadow(0 0 3px rgba(255,140,0,0.9)); flex-shrink:0; }
+  .weblink { font-size:16px; color:#ffffff; }
+
+  /* DOTS */
+  .dots { position:absolute; bottom:32px; left:50%; transform:translateX(-50%); z-index:10; display:flex; gap:5px; }
+  .dot { width:5px; height:5px; border-radius:50%; background:rgba(255,255,255,0.25); transition:background 0.4s; }
+  .dot.active { background:#FF8C00; box-shadow:0 0 5px #FF8C00; }
+
+  /* CTA */
+  .cta-wrap { position:absolute; bottom:7px; left:50%; transform:translateX(-50%); z-index:10; }
+  .cta {
+    display:block; text-decoration:none;
+    background:linear-gradient(135deg,#FF8C00 0%,#D45A00 100%);
+    color:#fff;
+    font-family:'Oswald','Arial Black',sans-serif;
+    font-size:10px; font-weight:700; letter-spacing:0.5px;
+    padding:7px 15px; border-radius:22px; white-space:nowrap;
+    text-align:center; text-transform:uppercase;
+    border:1px solid rgba(255,180,80,0.45);
+    box-shadow:0 0 12px rgba(255,120,0,0.7),0 0 24px rgba(255,90,0,0.3),0 3px 8px rgba(0,0,0,0.6);
+    animation:pulse 2.2s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%,100% { box-shadow:0 0 12px rgba(255,120,0,0.7),0 0 24px rgba(255,90,0,0.3),0 3px 8px rgba(0,0,0,0.6); }
+    50%      { box-shadow:0 0 18px rgba(255,150,0,0.95),0 0 36px rgba(255,110,0,0.5),0 3px 8px rgba(0,0,0,0.6); }
+  }
+  .cta:hover { background:linear-gradient(135deg,#FFA030 0%,#FF6000 100%); }
+</style>
+</head>
+<body >
+<div class="ad" onclick="window.open('https://terra-z@web.de','_blank')" >
+
+ <div class="bg-slide" id="s0" />
+  <!-- Logo -->
+  <img class="logo" src="data:image/png;base64,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" alt="Terra-Z">
+
+  <!-- Title -->
+  <div class="title-block">
+    <div class="title-main">Terrassenüberdachung<br>Wintergarten · Carport</div>
+    <div class="title-nrw">in NRW ★ <span class="weblink">www.terra-z.de</span> ★</div> 
+
+    <div class="divider"></div>
+  </div>
+  
+  <!-- Bullets -->
+  <div class="bullets">
+    <div class="bullet"><i class="bi">✓</i> 15+ Jahre Erfahrung</div>
+	<div class="bullet"><i class="bi">✓</i> 500+ Projekte</div>
+    <div class="bullet"><i class="bi">★</i> 100% Kundenzufrieden.</div>
+    <div class="bullet"><i class="bi">🏆</i> Geprüfte Qualität</div>
+    <div class="bullet"><i class="bi">✓</i> Fachgerechte Montage</div>
+    <div class="bullet"><i class="bi">✓</i> Faire Preise</div>
+    <div class="bullet"><i class="bi">✓</i> Individuelle Planung</div>
+    <div class="bullet"><i class="bi">💡</i> LED-Beleuchtung</div>
+	<div class="bullet"><i class="bi">✓</i> Premium Materialien</div>
+    <div class="bullet"><i class="bi">🌿</i> Beschattungen</div>
+  </div>
+
+  <!-- Slide dots -->
+  <div class="dots">
+    <div class="dot active" id="d0"></div>
+    <div class="dot" id="d1"></div>
+    <div class="dot" id="d2"></div>
+    <div class="dot" id="d3"></div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-wrap">
+    <a class="cta" href="https://terra-z.github.io/terraz/anfrage.html" target="_blank" onclick="event.stopPropagation()">✦ Jetzt kostenlos beraten lassen</a>
+  </div>
+
+  <!-- Glowing border + sweeping shine -->
+  <div class="border-glow"></div>
+  <div class="shine-top"></div>
+  <div class="shine-right"></div>
+  <div class="shine-bottom"></div>
+  <div class="shine-left"></div>
+
+</div>
+
+<script>
+  const slides = [0,1,2,3].map(i=>document.getElementById('s'+i));
+  const dots   = [0,1,2,3].map(i=>document.getElementById('d'+i));
+  let cur = 0;
+  function go(n) {
+    slides[cur].classList.remove('active'); dots[cur].classList.remove('active');
+    cur = n;
+    slides[cur].classList.add('active'); dots[cur].classList.add('active');
+  }
+  setInterval(()=>go((cur+1)%4), 3600);
+</script>
+</body>
+</html>
