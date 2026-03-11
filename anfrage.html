@@ -466,48 +466,6 @@
             margin: 1.5rem 0;
         }
 
-        /* File upload */
-        .file-upload-area {
-            border: 2px dashed var(--border-medium);
-            border-radius: 10px;
-            padding: 1.5rem;
-            text-align: center;
-            cursor: pointer;
-            transition: border-color 0.2s, background 0.2s;
-            position: relative;
-        }
-        .file-upload-area:hover,
-        .file-upload-area.drag-over {
-            border-color: var(--primary);
-            background: rgba(255,107,53,0.04);
-        }
-        .file-upload-area input[type="file"] {
-            position: absolute; inset: 0;
-            opacity: 0; cursor: pointer;
-            width: 100%; height: 100%;
-        }
-        .file-upload-icon { font-size: 1.75rem; margin-bottom: 6px; }
-        .file-upload-text {
-            font-size: 0.82rem;
-            color: var(--text-muted);
-            line-height: 1.6;
-        }
-        .file-upload-text strong { color: var(--primary); }
-        .file-list {
-            margin-top: 8px;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 6px;
-        }
-        .file-chip {
-            background: rgba(255,107,53,0.1);
-            border: 1px solid rgba(255,107,53,0.3);
-            border-radius: 20px;
-            padding: 3px 10px;
-            font-size: 0.72rem;
-            color: var(--primary);
-        }
-
         /* Checkboxes */
         .form-check-row {
             display: flex;
@@ -1238,19 +1196,7 @@
                         <textarea name="message" required placeholder="Beschreiben Sie Ihr Projekt: Wo soll die Überdachung hin? Welches Material bevorzugen Sie? Gibt es besondere Wünsche?"></textarea>
                     </div>
 
-                    <!-- File upload -->
-                    <div class="form-group">
-                        <label>Anhang <span style="color:var(--text-muted);font-weight:400">(.pdf, .jpg, .png – optional)</span></label>
-                        <div class="file-upload-area" id="fileUploadArea">
-                            <input type="file" id="fileInput" name="attachments" accept=".pdf,.jpg,.jpeg,.png" multiple>
-                            <div class="file-upload-icon">📎</div>
-                            <div class="file-upload-text">
-                                <strong>Dateien auswählen</strong> oder hierher ziehen<br>
-                                PDF, JPG oder PNG – bis zu 5 Dateien
-                            </div>
-                            <div class="file-list" id="fileList"></div>
-                        </div>
-                    </div>
+                    
 
                     <!-- Newsletter + Datenschutz -->
                     <div class="form-check-row">
@@ -1348,35 +1294,6 @@
             });
         });
 
-        // File upload display
-        const fileInput = document.getElementById('fileInput');
-        const fileList = document.getElementById('fileList');
-        const fileUploadArea = document.getElementById('fileUploadArea');
-
-        fileInput.addEventListener('change', function() {
-            fileList.innerHTML = '';
-            Array.from(this.files).forEach(function(f) {
-                const chip = document.createElement('span');
-                chip.className = 'file-chip';
-                chip.textContent = f.name;
-                fileList.appendChild(chip);
-            });
-        });
-
-        // Drag & drop highlight
-        fileUploadArea.addEventListener('dragover', function(e) {
-            e.preventDefault();
-            fileUploadArea.classList.add('drag-over');
-        });
-        fileUploadArea.addEventListener('dragleave', function() {
-            fileUploadArea.classList.remove('drag-over');
-        });
-        fileUploadArea.addEventListener('drop', function(e) {
-            e.preventDefault();
-            fileUploadArea.classList.remove('drag-over');
-            fileInput.files = e.dataTransfer.files;
-            fileInput.dispatchEvent(new Event('change'));
-        });
 
         // Form submission
         document.getElementById('contactForm').addEventListener('submit', async function(e) {
